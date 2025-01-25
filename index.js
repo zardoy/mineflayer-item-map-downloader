@@ -21,8 +21,7 @@ const EventEmitter = require('events')
  */
 function mineflayerPlugin (bot, options = {}) {
   if (!supportedVersions.includes(bot.majorVersion)) {
-    console.error('Map downloader: Version not supported')
-    return
+    console.warn('Map downloader: Version not supported')
   }
 
   const outputDir = options['mapDownloader-outputDir'] ?? path.join('.')
